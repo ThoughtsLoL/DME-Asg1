@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="checkEdits()">
     <ion-app>
         <ion-header translucent>
           <ion-toolbar>
@@ -28,11 +29,18 @@
          
           <div class="card-body">
             <div class="user-meta ion-text-center">
-              <h3 class="name">Name</h3>
-              <h5 class="country">Country</h5>
+              <h3 class="name" id = "name" contenteditable="true">Type name here</h3>
+              <h5 class="country" id = "country" contenteditable="true">Type country here</h5>
             </div>
-            <ion-button expand="full" color="primary">Bio</ion-button>
+            <div class="ion-text-center">
+            <ion-item >Bio</ion-item>
+            <h5 contenteditable="true" id = "bio">Type here</h5>
           </div>
+          </div>
+          <div id="update"></div>
+          <ion-button expand="full" type="button" value="save my edits" onclick="saveEdits()"> Save </ion-button>
+          <ion-button expand="full" type="button" value="reset" onclick="resetEdits()"> Reset </ion-button>
+          
 
         </ion-content>
       </ion-app>
