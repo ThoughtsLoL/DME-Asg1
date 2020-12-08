@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile Page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-    <link rel="stylesheet" href="styles.css">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
     <script src="script.js"></script>
-</head>
-<body onload="checkEdits()">
+  </head>
+  <body onload="checkEdits()">
     <ion-app>
-        <ion-header translucent>
-          <ion-toolbar>
-            <ion-title>Profile</ion-title>
-          </ion-toolbar>
-        </ion-header>
-    
-        <ion-content fullscreen>
-          <div class="card">
-            <div class="header">
-              <div class="avatar">
-                <img src="images/avatar.png" alt="">
-              </div>
-            </div>
-          </div>
-         
-          <div class="card-body">
-            <div class="user-meta ion-text-center">
-              <h3 class="name" id = "name" contenteditable="true">Type name here</h3>
-              <h5 class="country" id = "country" contenteditable="true">Type country here</h5>
-            </div>
-            <div class="ion-text-center">
-            <ion-item >Bio</ion-item>
-            <h5 contenteditable="true" id = "bio">Type here</h5>
-          </div>
-          </div>
-          <div id="update"></div>
-          <ion-button expand="full" type="button" value="save my edits" onclick="saveEdits()"> Save </ion-button>
-          <ion-button expand="full" type="button" value="reset" onclick="resetEdits()"> Reset </ion-button>
-          
+      <ion-header translucent>
+        <ion-toolbar>
+          <ion-title>Profile</ion-title>
+        </ion-toolbar>
+      </ion-header>
 
-        </ion-content>
-      </ion-app>
-</body>
+      <ion-content fullscreen>
+        <div class="card">
+          <div class="header">
+            <div class="avatar">
+              <img src="images/avatar.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="user-meta ion-text-center">
+            <h3 class="name" id="name" contenteditable="true">
+              Type name here
+            </h3>
+            <h5 class="country" id="country" contenteditable="true">
+              Type country here
+            </h5>
+          </div>
+          <div class="ion-text-center">
+            <ion-item>Bio</ion-item>
+            <h5 contenteditable="true" id="bio">Type here</h5>
+          </div>
+        </div>
+        <div id="update"></div>
+        <ion-button expand="full" type="button" value="save my edits" onclick="saveEdits()">Save</ion-button>
+        <ion-button expand="full" type="button" value="reset" onclick="resetEdits()">Reset</ion-button>
+        <form class="ion-text-center">
+          <label>Date:</label><br>
+          <input type="date"><br>
+          <label>Activity:</label><br>
+          <input type="text"><br>
+        </form>
+      </ion-content>
+    </ion-app>
+  </body>
 </html>
