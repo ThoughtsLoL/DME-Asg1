@@ -17,7 +17,7 @@
       nomodule
       src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
     ></script>
-    <script src="script.js"></script>
+    
   </head>
   <body onload="checkEdits()">
     <ion-app>
@@ -53,13 +53,40 @@
         <div id="update"></div>
         <ion-button expand="full" type="button" value="save my edits" onclick="saveEdits()">Save</ion-button>
         <ion-button expand="full" type="button" value="reset" onclick="resetEdits()">Reset</ion-button>
-        <form class="ion-text-center">
-          <label>Date:</label><br>
-          <input type="date"><br>
-          <label>Activity:</label><br>
-          <input type="text"><br>
+        <form class="ion-text-center" id="form">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Entry</ion-card-title>
+            </ion-card-header>
+            <ion-card-item>
+              <ion-item>
+                <ion-label position="floating">Date</ion-label>
+                <ion-input type="date" id="input-date"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Activity</ion-label>
+                <ion-input type="text" id="input-activity"></ion-input>
+              </ion-item>
+  
+              <div class="ion-margin ion-margin-vertical ion-text-right">
+                <!-- <ion-button fill="outline" color="danger" id="btn-cancel">
+                  <ion-icon name="close"></ion-icon>
+                  Clear
+                </ion-button> -->
+  
+                <ion-button id="btn-confirm">Add entry</ion-button>
+              </div>
+            </ion-card-item>
+          </ion-card>
+          <ion-row>
+            <ion-col size-md = "6" offset-md="3">
+              <ion-list id="entry-list" class="ion-text-uppercase"></ion-list>
+            </ion-col>
+          </ion-row>
         </form>
+        
       </ion-content>
     </ion-app>
+    <script src="script.js"></script>
   </body>
 </html>

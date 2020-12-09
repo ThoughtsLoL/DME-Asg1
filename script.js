@@ -40,3 +40,57 @@ function checkEdits() {
     document.getElementById("country").innerHTML = localStorage.userCountry;
   }
 }
+
+const dateInput = document.querySelector("#input-date");
+const activityInput = document.querySelector("#input-activity");
+//const cancleBtn = document.querySelector("#btn-cancel");
+const confirmBtn = document.querySelector("#btn-confirm");
+
+const entryList = document.querySelector("#entry-list");
+
+//const totalExpenseOutput = document.querySelector("#total-expenses");
+
+const clear = () => {
+  dateInput.value = "";
+  activityInput.value = "";
+}
+
+confirmBtn.addEventListener("click", ()=>{
+    const enteredDate = dateInput.value;
+    const enteredActivity = activityInput.value;
+
+    if (
+      enteredDate.trim().length <= 0 ||
+      enteredActivity.trim().length <= 0
+    ) {
+      console.log("blanks");
+
+      //presentAlert("Error", "Please fill in the blanks");
+
+      return;
+    }
+    console.log(enteredDate, enteredActivity);
+
+    const newItem = document.createElement("ion-list");
+    const newItem2 = document.createElement("ion-list");
+    newItem.textContent = enteredDate;
+    newItem2.textContent = enteredActivity;
+
+    entryList.appendChild(newItem);
+    entryList.appendChild(newItem2);
+
+    clear();
+});
+// cancleBtn.addEventListener("click" , clear);
+
+// function presentAlert(header, message, subtitle = ""){
+//   const alert = document.createElement("ion-alert");
+//   alert.cssClass = "my-custom-class";
+//   alert.header = header;
+//   alert.subtitle = subtitle;
+//   alert.message = message;
+//   alert.buttons =["Ok"];
+
+//   document.body.appendChild(alert);
+//   return alert.present();
+// }
