@@ -3,14 +3,17 @@ function saveEdits() {
   var editBio = document.getElementById("bio");
   var editName = document.getElementById("name");
   var editCountry = document.getElementById("country");
+
   //get the edited element content
   var userBio = editBio.innerHTML;
   var userName = editName.innerHTML;
   var userCountry = editCountry.innerHTML;
+
   //save the content to local storage
   localStorage.userBio = userBio;
   localStorage.userName = userName;
   localStorage.userCountry = userCountry;
+
   //write a confirmation to the user
   document.getElementById("update").innerHTML = "Edits saved!";
 }
@@ -33,11 +36,24 @@ function checkEdits() {
   if (localStorage.userBio != null) {
     document.getElementById("bio").innerHTML = localStorage.userBio;
   }
-  if (localStorage.userBio != null) {
+  if (localStorage.userName != null) {
     document.getElementById("name").innerHTML = localStorage.userName;
   }
-  if (localStorage.userBio != null) {
+  if (localStorage.userCountry != null) {
     document.getElementById("country").innerHTML = localStorage.userCountry;
+  }
+}
+
+function saveEntry() {
+  var editEntry = document.getElementById("entry-list");
+  var userEntry = editEntry.innerHTML;
+  localStorage.userEntry = userEntry;
+
+}
+
+function checkEntry() {
+  if (localStorage.userEntry != null) {
+    document.getElementById("entry-list").innerHTML = localStorage.userEntry;
   }
 }
 
@@ -79,6 +95,7 @@ confirmBtn.addEventListener("click", ()=>{
     entryList.appendChild(newItem);
     entryList.appendChild(newItem2);
 
+    saveEntry();
     clear();
 });
 // cancleBtn.addEventListener("click" , clear);
