@@ -48,13 +48,22 @@ function saveEntry() {
   var editEntry = document.getElementById("entry-list");
   var userEntry = editEntry.innerHTML;
   localStorage.userEntry = userEntry;
-
+  document.getElementById("update2").innerHTML = "Entries updated!";
 }
 
 function checkEntry() {
   if (localStorage.userEntry != null) {
     document.getElementById("entry-list").innerHTML = localStorage.userEntry;
   }
+}
+
+function resetEntry() { 
+
+  //save the content to local storage
+  localStorage.removeItem("userEntry");
+  document.getElementById("entry-list").innerHTML = "";
+  //write a confirmation to the user
+  document.getElementById("update2").innerHTML = "Entries has been reset!";
 }
 
 const dateInput = document.querySelector("#input-date");
