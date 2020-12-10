@@ -68,12 +68,8 @@ function resetEntry() {
 
 const dateInput = document.querySelector("#input-date");
 const activityInput = document.querySelector("#input-activity");
-//const cancleBtn = document.querySelector("#btn-cancel");
 const confirmBtn = document.querySelector("#btn-confirm");
-
 const entryList = document.querySelector("#entry-list");
-
-//const totalExpenseOutput = document.querySelector("#total-expenses");
 
 const clear = () => {
   dateInput.value = "";
@@ -90,8 +86,6 @@ confirmBtn.addEventListener("click", ()=>{
     ) {
       console.log("blanks");
 
-      //presentAlert("Error", "Please fill in the blanks");
-
       return;
     }
     console.log(enteredDate, enteredActivity);
@@ -107,16 +101,3 @@ confirmBtn.addEventListener("click", ()=>{
     saveEntry();
     clear();
 });
-// cancleBtn.addEventListener("click" , clear);
-
-// function presentAlert(header, message, subtitle = ""){
-//   const alert = document.createElement("ion-alert");
-//   alert.cssClass = "my-custom-class";
-//   alert.header = header;
-//   alert.subtitle = subtitle;
-//   alert.message = message;
-//   alert.buttons =["Ok"];
-
-//   document.body.appendChild(alert);
-//   return alert.present();
-// }
