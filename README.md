@@ -13,7 +13,7 @@ The site was made with everyone in mind, making sure that it is as easy to use a
 - Allows users to reset their saved entries. 
 
 # Technologies Used
-- Ionic
+- [Ionic](https://ionicframework.com/docs/components)
 
 # Testing
 1. Fill in the user profile
@@ -24,4 +24,4 @@ The site was made with everyone in mind, making sure that it is as easy to use a
    
 # Credits
 ### Media
-- The avatar image used in this site is obtained from 
+- The avatar image used in this site is obtained from [Klipartz](https://www.klipartz.com/en/sticker-png-fllfa)
